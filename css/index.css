@@ -133,11 +133,14 @@ table {
 html,
 body {
   height: 100%;
+  font-size: 62.5%;
 }
+@primary-font : font-family: 'Cinzel', serif;
 header {
   padding: 2%;
   text-align: center;
 }
-header h1 {
-  color: #3e5163;
+header a h1 {
+  color: #008b8b;
+  font-size: 4rem;
 }
