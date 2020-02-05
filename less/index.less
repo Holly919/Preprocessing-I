@@ -53,8 +53,8 @@ table {
 /* Set every element's box-sizing to border-box */
 
 //variables
-@header-color: #008b8b;
-@background-color:#dcdcdc;
+@h-color: #008b8b;
+@background-color:#f8f8ff;
 @bodytext-color: #2f4f4f;
 @body-font: 'Cinzel', serif;
 @h1h2-font: 'Jim Nightshade', cursive;
@@ -71,6 +71,8 @@ table {
 	margin: @m;
 	padding: @p;
   }
+
+  
   
   * {
     box-sizing: border-box;
@@ -81,30 +83,28 @@ html {
 		font-size: 62.5%;
 	}
 	
-	section {
-		width: 95%;
-		margin: auto;
-		font-family: @body-font;
-		@media @mobile {
-		width: 100%;
-	}
+
   
+	h1, h2, h3 {
+		color: @h-color;
+	}
   h1 {
 	font-size: 4rem;
 	font-family: @h1h2-font;
+	margin-top: 2%;
   	}
   
   h2 {
 	font-size: 2.4rem;
 	font-weight: bold;
-	margin-bottom: 5px;
+	margin-top: 1%;
 	font-family: @h1h2-font;
   	}
   
   h3 {
-	font-size: 2rem;
+	font-size: 1.8rem;
   	font-weight: bold;
-	margin-bottom: 5px;
+	margin-top: 1%;
 	font-family: 'Permanent Marker', cursive;
 	}
 
@@ -120,30 +120,34 @@ html {
   
   .container {
 	  font-size: 1.5rem;
+	  width: 80%;
+	  margin: auto;
+	  font-family: @body-font;
+	  background-color: @background-color;
 	  
-          
-    
-    @media @mobile{
-		width: 90%;
-		margin: auto;
-	}//end of media
-
+	  @media @mobile {
+	  width: 95%;
+	  
+	     
 	header {
-		background-color: @background-color;
-		
-		nav a {
-		  .flex-layout(space-around, center);
-	  
-		  @media @mobile {
-			flex-direction: column;
-		  } // end @media for nav
-	  
-		  a {
-			text-decoration: none;
-			color: black
-			} // end a
+		display: flex;
+		justify-content: center;
+
+		nav{
+			display: flex;
+			justify-content: center;
+
+		a {
+		  .flex-layout(space-between, center);
+		  text-decoration: none;
+		  color: black
+		 
+		} // end a
 		} // end nav
 	  } // end header
+	} // end media
+	 
+
+
     
   } //end of container
-}

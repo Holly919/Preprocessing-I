@@ -133,61 +133,58 @@ table {
 html {
   font-size: 62.5%;
 }
-section {
-  width: 95%;
-  margin: auto;
-  font-family: 'Cinzel', serif;
+h1,
+h2,
+h3 {
+  color: #008b8b;
 }
-@media (max-width:500px) {
-  section {
-    width: 100%;
-  }
-}
-section h1 {
+h1 {
   font-size: 4rem;
   font-family: 'Jim Nightshade', cursive;
+  margin-top: 2%;
 }
-section h2 {
+h2 {
   font-size: 2.4rem;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-top: 1%;
   font-family: 'Jim Nightshade', cursive;
 }
-section h3 {
-  font-size: 2rem;
+h3 {
+  font-size: 1.8rem;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-top: 1%;
   font-family: 'Permanent Marker', cursive;
 }
-section a {
+a {
   font-size: 1.4rem;
 }
-section p {
+p {
   font-size: 1.6rem;
 }
-section .container {
+.container {
   font-size: 1.5rem;
+  width: 80%;
+  margin: auto;
+  font-family: 'Cinzel', serif;
+  background-color: #f8f8ff;
 }
 @media (max-width:500px) {
-  section .container {
-    width: 90%;
-    margin: auto;
+  .container {
+    width: 95%;
   }
-}
-section .container header {
-  background-color: #dcdcdc;
-}
-section .container header nav a {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-@media (max-width:500px) {
-  section .container header nav a {
-    flex-direction: column;
+  .container header {
+    display: flex;
+    justify-content: center;
   }
-}
-section .container header nav a a {
-  text-decoration: none;
-  color: black;
+  .container header nav {
+    display: flex;
+    justify-content: center;
+  }
+  .container header nav a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+  }
 }
