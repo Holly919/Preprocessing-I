@@ -54,9 +54,11 @@ table {
 
 //variables
 @header-color: #008b8b;
+@background-color:#dcdcdc;
 @bodytext-color: #2f4f4f;
-@body-font: font-family: 'Cinzel', serif;
-@h1h2-font: font-family: 'Jim Nightshade', cursive;
+@body-font: 'Cinzel', serif;
+@h1h2-font: 'Jim Nightshade', cursive;
+@mobile: ~'(max-width:500px)';
 
 //mix-ins
 .flex-layout(@justify, @align) {
@@ -65,21 +67,10 @@ table {
   align-items: @align;
 }
 
-.set-mobile {
-		.flex-setup(column, center);
-		align-content: stretch;
-		align-items: center;
-		padding: 0;
-		width: 100%;
-}
-  
-  .set-mobile {
-		.flex-setup(column, center);
-		align-content: stretch;
-		align-items: center;
-		padding: 0;
-		width: 100%;
-}
+.spacing(@m, @p) {
+	margin: @m;
+	padding: @p;
+  }
   
   * {
     box-sizing: border-box;
@@ -88,52 +79,71 @@ table {
 // general styles
 html {
 		font-size: 62.5%;
-		width: 80%;
+	}
+	
+	section {
+		width: 95%;
 		margin: auto;
 		font-family: @body-font;
 		@media @mobile {
-			width: 100%;
+		width: 100%;
 	}
-	
-body {
-		line-height: 1;
-		font-size: 1.5rem;
-   	}
   
   h1 {
 	font-size: 4rem;
+	font-family: @h1h2-font;
   	}
   
   h2 {
 	font-size: 2.4rem;
 	font-weight: bold;
 	margin-bottom: 5px;
+	font-family: @h1h2-font;
   	}
   
   h3 {
 	font-size: 2rem;
   	font-weight: bold;
 	margin-bottom: 5px;
+	font-family: 'Permanent Marker', cursive;
 	}
 
-	html, body {
-		height: 100%;
+	a {
+		font-size: 1.4rem;
+		;
+	}
+
+	p {
+		font-size: 1.6rem;
 	}
 	
-	a {
-		text-decoration: none;
-		color: black;
-		}
-
-
   
   .container {
-    font-size: 1.5rem;
+	  font-size: 1.5rem;
+	  
           
     
     @media @mobile{
-		width: 91%;
+		width: 90%;
 		margin: auto;
-	}
+	}//end of media
+
+	header {
+		background-color: @background-color;
+		
+		nav a {
+		  .flex-layout(space-around, center);
+	  
+		  @media @mobile {
+			flex-direction: column;
+		  } // end @media for nav
+	  
+		  a {
+			text-decoration: none;
+			color: black
+			} // end a
+		} // end nav
+	  } // end header
     
-  }//end of container
+  } //end of container
+}
